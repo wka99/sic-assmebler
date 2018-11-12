@@ -30,17 +30,17 @@
 0x1054 return   ldx     temp
 0x1057          rsub
 0x105a azero    word    48
-0x105d nzero    word    0
-0x1060 seven    word    7
-0x1063 sixteen  word    16
-0x1066 one      word    1
-0x1069 ten      word    10
-0x106c eof      word    63
-0x106f index    resw    1
-0x1072 temp     resw    1
-0x1075 incnt    word    0
-0x1078 temp2    resw    1
-0x107b indev    byte    c'0010030C1006'
-0x1087          byte    c'000005FFFFFF?'
-0x1094 exaddr   resb    12
-0x10a0          end     begin
+0x1060 nzero    word    0
+0x1066 seven    word    7
+0x106c sixteen  word    16
+0x1072 one      word    1
+0x1078 ten      word    10
+0x107e eof      word    63
+0x1084 index    resw    1
+0x108a temp     resw    1
+0x1090 incnt    word    0
+0x1096 temp2    resw    1
+0x109c indev    byte    c'0010030C1006'
+0x10ab          byte    c'000005FFFFFF?'
+0x10bb exaddr   resb    12
+0x10ca          end     begin
