@@ -1,0 +1,53 @@
+1000        test8    start   1000
+1000 00105d begin    lda     nzero
+1003 04105d          ldx     nzero
+1006 0C106f          sta     index
+1009 48102a loop     jsub    getc
+100c 201063          mul     sixteen
+100f 0C1078          sta     temp2
+1012 48102a          jsub    getc
+1015 181078          add     temp2
+1018 549094          stch    exaddr,x
+101b 00106f          lda     index
+101e 181066          add     one
+1021 0C106f          sta     index
+1024 04106f          ldx     index
+1027 3C1009          j       loop
+102a 101072 getc     stx     temp
+102d 041075          ldx     incnt
+1030 001075          lda     incnt
+1033 181066          add     one
+1036 0C1075          sta     incnt
+1039 50907b          ldch    indev,x
+103c 28106c          comp    eof
+103f 301094          jeq     exaddr
+1042 28105a          comp    azero
+1045 38102a          jlt     getc
+1048 1C105a          sub     azero
+104b 281069          comp    ten
+104e 381054          jlt     return
+1051 1C1060          sub     seven
+1054 041072 return   ldx     temp
+1057 4C0000          rsub
+105a 000030 azero    word    48
+105d 000000 nzero    word    0
+1060 000007 seven    word    7
+1063 000010 sixteen  word    16
+1066 000001 one      word    1
+1069 00000a ten      word    10
+106c 00003f eof      word    63
+106f        index    resw    1
+1072        temp     resw    1
+1075 000000 incnt    word    0
+1078        temp2    resw    1
+107b 303031 indev    byte    c'0010030C1006'
+     303033
+     304331
+     303036
+1087 303030          byte    c'000005FFFFFF?'
+     303035
+     464646
+     464646
+     3f
+1094        exaddr   resb    12
+10a0                 end     begin
