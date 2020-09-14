@@ -1,7 +1,7 @@
 # sic assembler
 ## 1. 전체 구성도 및 설계
 
-<center><img src="https://user-images.githubusercontent.com/43545606/93041279-1a457980-f687-11ea-8f6c-fd18e468f13a.png" width="500" height="300"></center>
+<p align="center"><img src="https://user-images.githubusercontent.com/43545606/93041279-1a457980-f687-11ea-8f6c-fd18e468f13a.png" width="500" height="300"></p>
 
 본 어셈블러는 2pass 구조로 pass1, pass2를 거쳐 어셈블리 코드에 대한 목적 코드를 만들어 낸다. Pass1은 어셈블리 코드인 assembly_program.txt를 열어 symbol_table과 intermediate file을 생성한다. 또한 16진수의 형태인 프로그램 길이(programlen), 프로그램 시작 주소를 생성한다. 이렇게 생성한 파일과 변수들을 pass2에 넘겨주어 목적 프로그램(objProgram.txt)와 어셈블리 리스트 파일(listfile.txt)를 최종적으로 생성하게 된다.
 
